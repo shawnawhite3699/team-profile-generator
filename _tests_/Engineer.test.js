@@ -2,9 +2,11 @@ const Engineer = require('../lib/Engineer');
 
 describe("Engineer", () => {
     it("should return the name passed in", () => {
+        //Arrange
         const newEmp = new Engineer("Will", "2", "will@company.org", "willco");
+        //Act
         const testName = newEmp.getName();
-
+        //Assert
         expect(testName).toBe("Will");
     });
 
