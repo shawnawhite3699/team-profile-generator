@@ -88,5 +88,27 @@ const otherEmployeePrompts = () => {
             default: false
         },
     ])
-    
-}
+    .then(employeeInput => {
+        //Handling different employee types
+        let {name, id, email, role, github, school, continueAdding} = employeeInput
+        let employee;
+
+        if (role === "Engineer") {
+            employee = new Engineer (name, id, email, github);
+            console.log(employee);
+        }
+        else {
+            employee = new Intern (name, id, email, school);
+            console.log(employee);
+        }
+
+        teamArray.push(employee);
+
+        if (continueAdding) {
+            return otherEmployeePrompts(teamArray);
+        }
+        else {
+            return teamArray;
+        }
+    })
+};
