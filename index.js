@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //link to page generator
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./src/generateHTML.js');
 
 //Team profiles
 const Manager = require('./lib/Manager');
@@ -112,3 +112,29 @@ const otherEmployeePrompts = () => {
         }
     })
 };
+
+//Function to generate HTML file
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        //Error 
+        if (err) {
+            console.log(err);
+            return;
+        //Success 
+        } else {
+            console.log('You have successfully generated your team profile!')
+        }
+    })
+}; 
+
+managerPrompts()
+  .then(otherEmployeePrompts)
+  .then(teamArray => {
+    return generateHTML(teamArray);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .catch(err => {
+ console.log(err);
+  });
