@@ -88,4 +88,36 @@ generateHTML = (data) => {
     //Return to generated page
     const generateTeam = generateTeamPage(employeeCards); 
     return generateTeam;
-}
+};
+
+// generate html page 
+const generateTeamPage = function (employeeCards) {   
+    return`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Profile</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar" id="navbar">
+                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Amazing Team</span>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row justify-content-center" id="team-cards">
+                    ${employeeCards}
+                </div>
+            </div>
+        </main>    
+    </body>
+    </html>
+  `;
+  };
+  
+  module.exports = generateHTML;
