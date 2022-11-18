@@ -54,3 +54,38 @@ const generateIntern = function (intern) {
     </div>
     `;
 };
+
+//Handle user input and push data to page with appropriate card 
+generateHTML = (data) => {
+
+    //Cards array 
+    pageArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
+
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
+        }
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            pageArray.push(engineerCard);
+        }
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            pageArray.push(internCard);
+        }
+    }
+    
+    //Join strings
+    const employeeCards = pageArray.join('')
+
+    //Return to generated page
+    const generateTeam = generateTeamPage(employeeCards); 
+    return generateTeam;
+}
