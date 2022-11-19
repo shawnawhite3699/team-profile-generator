@@ -1,13 +1,11 @@
 //Manager card
 const generateManager = function (manager) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mb-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">
-                manage_accounts
-                </i>
+                <i class="material-icons">manage_accounts</i><h4>Manager</h4>
             </div>
 
             <div class="card-body">
@@ -23,11 +21,11 @@ const generateManager = function (manager) {
 //Engineer card
 const generateEngineer = function (engineer) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mb-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i class="material-icons">build</i>
+                <i class="material-icons">build</i><h4>Engineer</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
@@ -42,11 +40,11 @@ const generateEngineer = function (engineer) {
 //Intern card
 const generateIntern = function (intern) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mb-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4><i class="material-icons">supervised_user_circle</i>
+                <i class="material-icons">supervised_user_circle</i><h4>Intern</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
@@ -109,6 +107,7 @@ const generateTeamPage = function (employeeCards) {
       <link href="https://fonts.cdnfonts.com/css/snell-roundhand" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
   </head>
+  
   <body>
       <header>
           <nav class="navbar" id="navbar">
@@ -122,11 +121,12 @@ const generateTeamPage = function (employeeCards) {
               </div>
           </div>
       </main>
-      
-  </body>
+    </body>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
   </html>
 `;
 }
